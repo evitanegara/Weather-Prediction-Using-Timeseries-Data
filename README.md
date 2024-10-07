@@ -29,6 +29,7 @@ This project involved several key steps to predict the weather in Agriculture.
 # Visualization
 <img width="1083" alt="vis" src="https://github.com/user-attachments/assets/5d22f188-a79b-4538-8898-18a591947825">
 <img width="527" alt="viss" src="https://github.com/user-attachments/assets/a3cc3edf-f449-4a10-b653-e2c8eb4bc514">
+
 - Based on time series visualizations, all models successfully capture and predict patterns in the test data, demonstrating their robustness in handling time-series forecasting and understanding temporal dynamics.
 - All models show an upward trend in future predictions, effectively capturing seasonal and diurnal patterns in the historical data.
 

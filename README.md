@@ -34,5 +34,8 @@ This project involved several key steps to predict the weather in Agriculture.
 - All models show an upward trend in future predictions, effectively capturing seasonal and diurnal patterns in the historical data.
 
 
-# Conlusion : 
+# Conlusion 
 This project applied machine learning, deep learning, and hybrid models to predict solar radiation. Voting Regressor and Random Forest offered reliable predictions, while LSTM excelled at capturing temporal patterns. Hyperparameter tuning further improved performance, highlighting the effectiveness of ensemble methods and deep learning for time-series forecasting in agricultural weather prediction.
+
+# Contact 
+For any questions or inquiries, please contact evitanegara@gmail.com

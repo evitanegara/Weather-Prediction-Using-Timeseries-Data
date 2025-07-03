@@ -27,10 +27,14 @@ This project investigates multiple supervised learning approaches for time-serie
 - Loaded 40 years of daily DSSAT-format weather data.
 - Converted date strings (DDMMYY) into Python datetime objects.
 - Resampled daily data into biweekly averages to reduce short-term volatility and highlight long-term trends.
+  ![image](https://github.com/user-attachments/assets/2b5a1cdc-0730-45d2-a0c0-7c74a8c4f89e)
+
 
 ### 3. Visualization and Outlier Handling
 - Visualized distributions of key features (SRAD, RAIN, TMAX, TMIN) using histograms and boxplots.
 - Applied IQR-based capping** to handle rainfall outliers and reduce skew.
+  ![image](https://github.com/user-attachments/assets/525682c5-afd1-4b5f-89d9-a8e3f309531f)
+
 
 ### 4. Data Splitting and Scaling
 - Implemented walk-forward validation, using the last 26 weeks as a rolling test set while preserving temporal order.

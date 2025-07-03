@@ -18,7 +18,7 @@ This project focuses on the development and evaluation of machine learning and d
 ## Executive Summary
 This project investigates multiple supervised learning approaches for time-series regression forecasting. Ensemble tree models and neural networks demonstrate strong accuracy, with the Voting Regressor achieving the best overall performance. Random Forest stands out for its low MAPE (0.1234) and high R² (0.9736), making it highly suitable for capturing complex relationships in climate data. XGBoost delivers similar results with efficient learning from difficult cases. MLP offers solid performance in modeling non-linear dependencies, while LSTM shows the best R² (0.9741), capturing temporal sequences well. The ensemble-based Voting Regressor achieves the lowest MAPE (0.1134), indicating it generalizes best across the evaluation folds. Visualizations show consistent model performance in replicating SRAD seasonality and trend, with future forecasts successfully projecting rising solar radiation into 2000.
 
-## ⚙️ Methodology Workflow
+## Project Workflow
 
 ### 1. Data Import and Library Setup
 - Utilized libraries such as **Pandas**, **NumPy**, **Scikit-learn**, **Matplotlib**, **TensorFlow**, and **Keras** for data preprocessing, visualization, and model training.
@@ -30,11 +30,11 @@ This project investigates multiple supervised learning approaches for time-serie
 
 ### 3. Visualization and Outlier Handling
 - Visualized distributions of key features (`SRAD`, `RAIN`, `TMAX`, `TMIN`) using histograms and boxplots.
-- Applied **IQR-based capping** to handle rainfall outliers and reduce skew.
+- Applied IQR-based capping** to handle rainfall outliers and reduce skew.
 
 ### 4. Data Splitting and Scaling
-- Implemented **walk-forward validation**, using the last 26 weeks as a rolling test set while preserving temporal order.
-- Standardized features using **StandardScaler (Z-score normalization)** for consistent model input.
+- Implemented walk-forward validation, using the last 26 weeks as a rolling test set while preserving temporal order.
+- Standardized features using StandardScaler (Z-score normalization) for consistent model input.
 
 ### 5. Model Building and Hyperparameter Tuning
 Trained and optimized the following models:
@@ -47,7 +47,7 @@ Trained and optimized the following models:
 - Voting Regressor (ensemble)  
 - Stacking Regressor (meta-ensemble)
 
-- **GridSearchCV** with 5-fold cross-validation was used to tune hyperparameters across 26 walk-forward iterations.
+- GridSearchCV with 5-fold cross-validation was used to tune hyperparameters across 26 walk-forward iterations.
 
 ### 6. Future Forecasting
 - Generated synthetic weekly data for the year 2000.
@@ -56,7 +56,7 @@ Trained and optimized the following models:
 
 ---
 
-## 📈 Model Performance Summary
+##  Model Performance Summary
 
 | Model         | MAPE   | R²     | MAE    | RMSE   |
 |---------------|--------|--------|--------|--------|
@@ -71,7 +71,7 @@ Trained and optimized the following models:
 
 ---
 
-## 🔍 Highlights
+## Highlights
 
 - **Voting Regressor** achieved the lowest MAPE (11.34%), offering the most accurate average forecasts.
 - **LSTM** scored the highest R² (97.41%) and lowest RMSE, excelling at learning temporal dependencies.
@@ -79,17 +79,13 @@ Trained and optimized the following models:
 - **MLP** showed solid performance on nonlinear patterns but was slightly more noise-sensitive.
 - **KNN** was the weakest performer due to its sensitivity to noise and distance metrics in high-dimensional data.
 
----
-
-## 📊 Forecast Visualization
+## Forecast Visualization
 
 - All models effectively captured the seasonal trend of solar radiation.
-- Predictions for 2000 showed consistent upward trends during summer months.
-- Visual overlap between actual and predicted values was strongest for LSTM, Random Forest, and Voting Regressor.
+- For future prediction, all the models show an upward pattern, which makes sense because these models have effectively captured the seasonal and diurnal patterns present in the historical data. The upward trend observed in future predictions is likely a reflection of seasonal increases in solar radiation.
 
----
 
-## 🧠 Key Takeaways
+## Key Takeaways
 
 - **Ensemble Learning Works Best:** Voting Regressor had the most balanced and reliable predictions.
 - **Temporal Dynamics Matter:** LSTM’s ability to model sequences made it ideal for time-series forecasting.
@@ -98,12 +94,12 @@ Trained and optimized the following models:
 
 ---
 
-## ✅ Conclusion
+## Forecast Visualization
 
-This project demonstrates a complete end-to-end machine learning pipeline for agricultural weather forecasting using 40 years of solar radiation data. From preprocessing and exploratory analysis to model tuning and future prediction, the workflow highlights best practices in time-series forecasting and supports the development of climate-aware agricultural planning tools.
+- All models effectively captured the seasonal trend of solar radiation.
+- For future prediction, all the models show an upward pattern, which makes sense because these models have effectively captured the seasonal and diurnal patterns present in the historical data. The upward trend observed in future predictions is likely a reflection of seasonal increases in solar radiation.
 
----
 
-## 📬 Contact
+##  Contact
 
 For questions, feedback, or collaboration inquiries: **evitanegara@gmail.com**

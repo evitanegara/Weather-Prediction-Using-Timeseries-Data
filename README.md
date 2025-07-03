@@ -9,11 +9,11 @@ This project focuses on the development and evaluation of machine learning and d
 
 | Column | Description | Type |
 |--------|-------------|------|
-| `DATE` | Date of observation (originally in DDMMYY format, converted to datetime) | Categorical (Datetime) |
-| `SRAD` | Solar radiation (MJ/m²) | Continuous |
-| `TMAX` | Maximum air temperature (°C) | Continuous |
-| `TMIN` | Minimum air temperature (°C) | Continuous |
-| `RAIN` | Daily precipitation (mm) | Continuous |
+| DATE | Date of observation (originally in DDMMYY format, converted to datetime) | Categorical (Datetime) |
+| SRAD | Solar radiation (MJ/m²) | Continuous |
+| TMAX | Maximum air temperature (°C) | Continuous |
+| TMIN | Minimum air temperature (°C) | Continuous |
+| RAIN | Daily precipitation (mm) | Continuous |
 
 ## Executive Summary
 This project investigates multiple supervised learning approaches for time-series regression forecasting. Ensemble tree models and neural networks demonstrate strong accuracy, with the Voting Regressor achieving the best overall performance. Random Forest stands out for its low MAPE (0.1234) and high R² (0.9736), making it highly suitable for capturing complex relationships in climate data. XGBoost delivers similar results with efficient learning from difficult cases. MLP offers solid performance in modeling non-linear dependencies, while LSTM shows the best R² (0.9741), capturing temporal sequences well. The ensemble-based Voting Regressor achieves the lowest MAPE (0.1134), indicating it generalizes best across the evaluation folds. Visualizations show consistent model performance in replicating SRAD seasonality and trend, with future forecasts successfully projecting rising solar radiation into 2000.

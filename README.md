@@ -6,6 +6,7 @@ This project focuses on the development and evaluation of machine learning and d
 - **Source:** [e-RA Rothamsted Online Database (UK)](https://www.era.rothamsted.ac.uk/)
 - **Period:** 1959–1999  
 - **Frequency:** Daily observations (resampled to biweekly)  
+
 | Column | Description | Type |
 |--------|-------------|------|
 | `DATE` | Date of observation (originally in DDMMYY format, converted to datetime) | Categorical (Datetime) |

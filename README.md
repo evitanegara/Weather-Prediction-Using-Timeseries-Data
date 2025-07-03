@@ -29,7 +29,7 @@ This project investigates multiple supervised learning approaches for time-serie
 - Resampled daily data into biweekly averages to reduce short-term volatility and highlight long-term trends.
 
 ### 3. Visualization and Outlier Handling
-- Visualized distributions of key features (`SRAD`, `RAIN`, `TMAX`, `TMIN`) using histograms and boxplots.
+- Visualized distributions of key features (SRAD, RAIN, TMAX, TMIN) using histograms and boxplots.
 - Applied IQR-based capping** to handle rainfall outliers and reduce skew.
 
 ### 4. Data Splitting and Scaling

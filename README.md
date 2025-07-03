@@ -6,12 +6,6 @@ This project focuses on the development and evaluation of machine learning and d
 - **Source:** [e-RA Rothamsted Online Database (UK)](https://www.era.rothamsted.ac.uk/)
 - **Period:** 1959–1999  
 - **Frequency:** Daily observations (resampled to biweekly)  
-- **Format:** DSSAT-compliant weather data format  
-- **Missing Values:** None  
-- **Outliers:** Rainfall outliers were detected using IQR and capped to reduce model distortion.
-
-## Dataset Fields
-
 | Column | Description | Type |
 |--------|-------------|------|
 | `DATE` | Date of observation (originally in DDMMYY format, converted to datetime) | Categorical (Datetime) |
@@ -20,42 +14,95 @@ This project focuses on the development and evaluation of machine learning and d
 | `TMIN` | Minimum air temperature (°C) | Continuous |
 | `RAIN` | Daily precipitation (mm) | Continuous |
 
+## Executive Summary
+This project investigates multiple supervised learning approaches for time-series regression forecasting. Ensemble tree models and neural networks demonstrate strong accuracy, with the Voting Regressor achieving the best overall performance. Random Forest stands out for its low MAPE (0.1234) and high R² (0.9736), making it highly suitable for capturing complex relationships in climate data. XGBoost delivers similar results with efficient learning from difficult cases. MLP offers solid performance in modeling non-linear dependencies, while LSTM shows the best R² (0.9741), capturing temporal sequences well. The ensemble-based Voting Regressor achieves the lowest MAPE (0.1134), indicating it generalizes best across the evaluation folds. Visualizations show consistent model performance in replicating SRAD seasonality and trend, with future forecasts successfully projecting rising solar radiation into 2000.
 
-# Project objectives :
-- This project aims to develop and compare models for weather forecasting, focusing on solar radiation (SRAD) as the target variable.
-- Using a 40-year time series dataset (1959-1999), models like KNN, Random Forest, XGBoost, LSTM, and hybrid methods (stacking, voting) are evaluated.
-- Hyperparameter tuning is applied to optimize model performance, improving predictive accuracy for agricultural decision-making.
+## ⚙️ Methodology Workflow
 
-# Project Overview 
-This project involved several key steps to predict the weather in Agriculture. 
-- **Data Import and Library Setup** : Utilized libraries such as Pandas, NumPy, Scikit-learn, Matplotlib, TensorFlow, and Keras for data manipulation, machine learning, deep learning, and visualization.
-- **Data Reading and Preprocessing** : Consolidated 40 years of weather data, extracted key variables (SRAD, TMAX, TMIN, RAIN), converted dates to a standardized format. In addition, aggregated daily data into weekly averages for clearer trend analysis and noise reduction.
-- **Data Visualization** : Created monthly and histogram visualizations for key variables to identify trends and detect outliers in the data.
-- **Handling Outlier** : Handled outliers in the rainfall data using the Interquartile Range (IQR) method, ensuring model accuracy and reliability.
-- **Data Splitting and Scaling** : Applied the rolling forecast method to split the dataset into training and testing sets, ensuring the chronological integrity of the time series data.
-- **Scalling Data** : Standardized the features to ensure consistent scaling across all variables using Standard Scaller
-- **Model Building and Hyperparameter Tuning** :
-  - Developed models such as KNN, Random Forest, XGBoost, AdaBoost, MLP, and LSTM, including ensemble techniques like Voting and Stacking Regressors for improved predictions.
-  - Fine-tuned hyperparameters using GridSearchCV to optimize model performance.
-- **Future Data Prediction** : Generated artificial data for the year 2000 to predict solar radiation using biweekly intervals, extending the dataset for future predictions.
-- **Evaluation Metric** : The models were evaluated based on several performance metrics: Mean Absolute Percentage Error (MAPE), R-squared (R2), Mean Absolute Error (MAE), Mean Squared Error (MSE), and Root Mean Squared Error (RMSE) 
+### 1. Data Import and Library Setup
+- Utilized libraries such as **Pandas**, **NumPy**, **Scikit-learn**, **Matplotlib**, **TensorFlow**, and **Keras** for data preprocessing, visualization, and model training.
 
-# Project Result 
-- Random Forest: Achieved 12.34% MAPE and 97.36% R², providing accurate predictions and effectively handling complex data patterns.
-- XGBoost and AdaBoost: XGBoost outperformed AdaBoost with 11.68% MAPE and 97.18% R², showing resilience to noise and capturing challenging patterns.
-- MLP and LSTM: LSTM stood out with the highest R² (97.41%) and lowest RMSE (1.06), excelling in modeling temporal dependencies.
-- Ensemble Methods: The Voting Regressor was the best performer (MAPE: 11.34%), while the Stacking Regressor was also competitive (MAPE: 12.98%), benefiting from combining multiple models for improved accuracy.
-  
-# Visualization
-<img width="1083" alt="vis" src="https://github.com/user-attachments/assets/5d22f188-a79b-4538-8898-18a591947825">
-<img width="527" alt="viss" src="https://github.com/user-attachments/assets/a3cc3edf-f449-4a10-b653-e2c8eb4bc514">
+### 2. Data Reading and Preprocessing
+- Loaded 40 years of daily DSSAT-format weather data.
+- Converted date strings (DDMMYY) into Python datetime objects.
+- Resampled daily data into biweekly averages to reduce short-term volatility and highlight long-term trends.
 
-- Based on time series visualizations, all models successfully capture and predict patterns in the test data, demonstrating their robustness in handling time-series forecasting and understanding temporal dynamics.
-- All models show an upward trend in future predictions, effectively capturing seasonal and diurnal patterns in the historical data.
+### 3. Visualization and Outlier Handling
+- Visualized distributions of key features (`SRAD`, `RAIN`, `TMAX`, `TMIN`) using histograms and boxplots.
+- Applied **IQR-based capping** to handle rainfall outliers and reduce skew.
 
+### 4. Data Splitting and Scaling
+- Implemented **walk-forward validation**, using the last 26 weeks as a rolling test set while preserving temporal order.
+- Standardized features using **StandardScaler (Z-score normalization)** for consistent model input.
 
-# Conlusion 
-This project applied machine learning, deep learning, and hybrid models to predict solar radiation. Voting Regressor and Random Forest offered reliable predictions, while LSTM excelled at capturing temporal patterns. Hyperparameter tuning further improved performance, highlighting the effectiveness of ensemble methods and deep learning for time-series forecasting in agricultural weather prediction.
+### 5. Model Building and Hyperparameter Tuning
+Trained and optimized the following models:
+- K-Nearest Neighbors (KNN)  
+- Random Forest Regressor  
+- XGBoost Regressor  
+- AdaBoost Regressor  
+- Multi-Layer Perceptron (MLP)  
+- Long Short-Term Memory (LSTM)  
+- Voting Regressor (ensemble)  
+- Stacking Regressor (meta-ensemble)
 
-# Contact 
-For any questions or inquiries, please contact evitanegara@gmail.com
+- **GridSearchCV** with 5-fold cross-validation was used to tune hyperparameters across 26 walk-forward iterations.
+
+### 6. Future Forecasting
+- Generated synthetic weekly data for the year 2000.
+- Applied the same scaling transformations.
+- Used trained models to generate forward predictions of solar radiation.
+
+---
+
+## 📈 Model Performance Summary
+
+| Model         | MAPE   | R²     | MAE    | RMSE   |
+|---------------|--------|--------|--------|--------|
+| Voting        | 0.1134 | 0.9715 | 0.8295 | 1.1655 |
+| LSTM          | 0.1364 | 0.9741 | 0.8880 | 1.0635 |
+| Random Forest | 0.1234 | 0.9736 | 0.8024 | 1.0748 |
+| XGBoost       | 0.1168 | 0.9718 | 0.8102 | 1.1107 |
+| MLP           | 0.1170 | 0.9687 | 0.8395 | 1.1691 |
+| Stacking      | 0.1298 | 0.9677 | 0.8813 | 1.1882 |
+| AdaBoost      | 0.1467 | 0.9643 | 0.9686 | 1.2500 |
+| KNN           | 0.1893 | 0.9236 | 1.4012 | 1.8280 |
+
+---
+
+## 🔍 Highlights
+
+- **Voting Regressor** achieved the lowest MAPE (11.34%), offering the most accurate average forecasts.
+- **LSTM** scored the highest R² (97.41%) and lowest RMSE, excelling at learning temporal dependencies.
+- **Random Forest** and **XGBoost** offered strong balance between accuracy and interpretability.
+- **MLP** showed solid performance on nonlinear patterns but was slightly more noise-sensitive.
+- **KNN** was the weakest performer due to its sensitivity to noise and distance metrics in high-dimensional data.
+
+---
+
+## 📊 Forecast Visualization
+
+- All models effectively captured the seasonal trend of solar radiation.
+- Predictions for 2000 showed consistent upward trends during summer months.
+- Visual overlap between actual and predicted values was strongest for LSTM, Random Forest, and Voting Regressor.
+
+---
+
+## 🧠 Key Takeaways
+
+- **Ensemble Learning Works Best:** Voting Regressor had the most balanced and reliable predictions.
+- **Temporal Dynamics Matter:** LSTM’s ability to model sequences made it ideal for time-series forecasting.
+- **Tree-Based Models Excel:** Random Forest and XGBoost offered both performance and transparency.
+- **Data Quality & Scaling are Critical:** Outlier capping and feature standardization enhanced model consistency.
+
+---
+
+## ✅ Conclusion
+
+This project demonstrates a complete end-to-end machine learning pipeline for agricultural weather forecasting using 40 years of solar radiation data. From preprocessing and exploratory analysis to model tuning and future prediction, the workflow highlights best practices in time-series forecasting and supports the development of climate-aware agricultural planning tools.
+
+---
+
+## 📬 Contact
+
+For questions, feedback, or collaboration inquiries: **evitanegara@gmail.com**

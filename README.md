@@ -1,4 +1,4 @@
-# Weather Forecasting for Agriculture Using Machine Learning
+# Weather Forecasting for Agriculture Using Machine Learning and Deep Learning
 ## Project Overview
 This project focuses on the development and evaluation of machine learning and deep learning models for time-series forecasting of solar radiation (SRAD), a key climatic factor influencing crop productivity. Leveraging 40 years of historical meteorological data from Rothamsted, England (1959–1999), the project aims to build accurate and interpretable models that can support agricultural planning, including irrigation scheduling and planting decisions. The project explores a comparative modeling approach using traditional machine learning algorithms (KNN, Random Forest, XGBoost, AdaBoost), deep learning techniques (MLP, LSTM), and hybrid ensemble methods (Voting, Stacking). Each model is rigorously optimized and evaluated using a consistent methodology, with results informing best practices for time-series forecasting in agricultural contexts.
 ## Dataset Overview

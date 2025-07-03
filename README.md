@@ -112,6 +112,7 @@ Trained and optimized the following models:
  <p align="center">
   <img src="https://github.com/user-attachments/assets/e62f7f3c-763c-4ea2-b633-16e89e4e2a2c" alt="Inventory Dashboard - Supplier Performance Page" width="700"/>
 </p>
-##  Contact
+
+## Contact
 
 For questions, feedback, or collaboration inquiries: **evitanegara@gmail.com**

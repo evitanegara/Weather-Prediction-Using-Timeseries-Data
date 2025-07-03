@@ -1,5 +1,25 @@
-# Business Understanding
-Agriculture is essential for economic growth and food security, but faces challenges from climate change and unpredictable weather, which impact crop yields. Accurate weather prediction, especially solar radiation, helps farmers manage risks, optimize planting schedules, and efficiently use resources like water and pesticides. Precise weather prediction allows farmers to plan effectively and mitigate adverse conditions like droughts.
+# Weather Forecasting for Agriculture Using Machine Learning
+## Project Overview
+This project focuses on the development and evaluation of machine learning and deep learning models for time-series forecasting of solar radiation (SRAD), a key climatic factor influencing crop productivity. Leveraging 40 years of historical meteorological data from Rothamsted, England (1959–1999), the project aims to build accurate and interpretable models that can support agricultural planning, including irrigation scheduling and planting decisions. The project explores a comparative modeling approach using traditional machine learning algorithms (KNN, Random Forest, XGBoost, AdaBoost), deep learning techniques (MLP, LSTM), and hybrid ensemble methods (Voting, Stacking). Each model is rigorously optimized and evaluated using a consistent methodology, with results informing best practices for time-series forecasting in agricultural contexts.
+## Dataset Overview
+
+- **Source:** [e-RA Rothamsted Online Database (UK)](https://www.era.rothamsted.ac.uk/)
+- **Period:** 1959–1999  
+- **Frequency:** Daily observations (resampled to biweekly)  
+- **Format:** DSSAT-compliant weather data format  
+- **Missing Values:** None  
+- **Outliers:** Rainfall outliers were detected using IQR and capped to reduce model distortion.
+
+## Dataset Fields
+
+| Column | Description | Type |
+|--------|-------------|------|
+| `DATE` | Date of observation (originally in DDMMYY format, converted to datetime) | Categorical (Datetime) |
+| `SRAD` | Solar radiation (MJ/m²) | Continuous |
+| `TMAX` | Maximum air temperature (°C) | Continuous |
+| `TMIN` | Minimum air temperature (°C) | Continuous |
+| `RAIN` | Daily precipitation (mm) | Continuous |
+
 
 # Project objectives :
 - This project aims to develop and compare models for weather forecasting, focusing on solar radiation (SRAD) as the target variable.

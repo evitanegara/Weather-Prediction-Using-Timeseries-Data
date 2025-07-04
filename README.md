@@ -1,13 +1,13 @@
 # Weather Forecasting for Agriculture Using Machine Learning and Deep Learning
 ## Project Overview
-This project focuses on the development and evaluation of machine learning and deep learning models for time-series forecasting of solar radiation (SRAD), a key climatic factor influencing crop productivity. Leveraging 40 years of historical meteorological data from Rothamsted, England (1959–1999), the project aims to build accurate and interpretable models that can support agricultural planning, including irrigation scheduling and planting decisions. This work is positioned as a climate-agriculture forecasting case study, addressing real-world challenges in yield prediction, drought anticipation, and resource-efficient farming.The project explores a comparative modeling approach using traditional machine learning algorithms (KNN, Random Forest, XGBoost, AdaBoost), deep learning techniques (MLP, LSTM), and hybrid ensemble methods (Voting, Stacking). Each model is rigorously optimized and evaluated using a consistent methodology, with results informing best practices for time-series forecasting in agricultural contexts.
+This project focuses on the development and evaluation of machine learning and deep learning models for time-series forecasting of solar radiation (SRAD), a key climatic factor influencing crop productivity. Leveraging 40 years of historical meteorological data from Rothamsted, England (1959–1999), the project aims to build accurate and interpretable models that can support agricultural planning, including irrigation scheduling and planting decisions. This work is positioned as a climate-agriculture forecasting case study, addressing real world challenges in yield prediction, drought anticipation, and resource efficient farming.The project explores a comparative modeling approach using traditional machine learning algorithms (KNN, Random Forest, XGBoost, AdaBoost), deep learning techniques (MLP, LSTM), and hybrid ensemble methods (Voting, Stacking). Each model is rigorously optimized and evaluated using a consistent methodology, with results informing best practices for time-series forecasting in agricultural contexts.
 
 
 ## Dataset Overview
 
-- **Source:** [e-RA Rothamsted Online Database (UK)](https://www.era.rothamsted.ac.uk/)
-- **Period:** 1959–1999  
-- **Frequency:** Daily observations (resampled to biweekly)  
+- Source: [e-RA Rothamsted Online Database (UK)](https://www.era.rothamsted.ac.uk/)
+- Period: 1959–1999  
+- Frequency: Daily observations (resampled to biweekly)  
 
 | Column | Description | Type |
 |--------|-------------|------|
@@ -30,17 +30,16 @@ This project investigates multiple supervised learning approaches for time-serie
 - Converted date strings (DDMMYY) into Python datetime objects.
 - Resampled daily data into biweekly averages to reduce short-term volatility and highlight long-term trends.
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/2b5a1cdc-0730-45d2-a0c0-7c74a8c4f89e" alt="weather prediction" width="500"/>
+  <img src="https://github.com/user-attachments/assets/2b5a1cdc-0730-45d2-a0c0-7c74a8c4f89e" alt="weather prediction" width="700"/>
 </p>
 
 
 ### 3. Visualization and Outlier Handling
 - Visualized distributions of key features (SRAD, RAIN, TMAX, TMIN) using histograms and boxplots.
-- Applied IQR-based capping** to handle rainfall outliers and reduce skew.
+- Applied IQR-based capping to handle rainfall outliers and reduce skew.
   <p align="center">
   <img src="https://github.com/user-attachments/assets/525682c5-afd1-4b5f-89d9-a8e3f309531f" alt="Handling Outlier" width="700"/>
 </p>
-
 
 ### 4. Data Splitting and Scaling
 - Implemented walk-forward validation, using the last 26 weeks as a rolling test set while preserving temporal order.
@@ -83,11 +82,11 @@ Trained and optimized the following models:
 
 ## Highlights
 
-- **Voting Regressor** achieved the lowest MAPE (11.34%), offering the most accurate average forecasts.
-- **LSTM** scored the highest R² (97.41%) and lowest RMSE, excelling at learning temporal dependencies.
-- **Random Forest** and **XGBoost** offered strong balance between accuracy and interpretability.
-- **MLP** showed solid performance on nonlinear patterns but was slightly more noise-sensitive.
-- **KNN** was the weakest performer due to its sensitivity to noise and distance metrics in high-dimensional data.
+- Voting Regressor achieved the lowest MAPE (11.34%), offering the most accurate average forecasts.
+- LSTM scored the highest R² (97.41%) and lowest RMSE, excelling at learning temporal dependencies.
+- Random Forest and XGBoost offered strong balance between accuracy and interpretability.
+- MLP showed solid performance on nonlinear patterns but was slightly more noise-sensitive.
+- KNN was the weakest performer due to its sensitivity to noise and distance metrics in high-dimensional data.
 
 ## Forecast Visualization
 
@@ -96,10 +95,10 @@ Trained and optimized the following models:
 
 ## Key Takeaways
 
-- **Ensemble Learning Works Best:** Voting Regressor had the most balanced and reliable predictions.
-- **Temporal Dynamics Matter:** LSTM’s ability to model sequences made it ideal for time-series forecasting.
-- **Tree-Based Models Excel:** Random Forest and XGBoost offered both performance and transparency.
-- **Data Quality & Scaling are Critical:** Outlier capping and feature standardization enhanced model consistency.
+- Ensemble Learning Works Best: Voting Regressor had the most balanced and reliable predictions.
+- Temporal Dynamics Matter: LSTM’s ability to model sequences made it ideal for time-series forecasting.
+- Tree-Based Models Excel: Random Forest and XGBoost offered both performance and transparency.
+- Data Quality & Scaling are Critical: Outlier capping and feature standardization enhanced model consistency.
 
 ---
 
@@ -108,13 +107,14 @@ Trained and optimized the following models:
 - All models effectively captured the seasonal trend of solar radiation.
 - For future prediction, all the models show an upward pattern, which makes sense because these models have effectively captured the seasonal and diurnal patterns present in the historical data. The upward trend observed in future predictions is likely a reflection of seasonal increases in solar radiation.
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/2cbf12d5-7a7a-481c-bf7a-e1e722e92ab5" alt="Forecasting weather" width="500"/>
+  <img src="https://github.com/user-attachments/assets/2cbf12d5-7a7a-481c-bf7a-e1e722e92ab5" alt="Forecasting weather" width="700"/>
 </p>
 
  <p align="center">
-  <img src="https://github.com/user-attachments/assets/e62f7f3c-763c-4ea2-b633-16e89e4e2a2c" alt="Forecasting" width="500"/>
+  <img src="https://github.com/user-attachments/assets/e62f7f3c-763c-4ea2-b633-16e89e4e2a2c" alt="Forecasting" width="700"/>
 </p>
 
 ## Contact
 
 For questions, feedback, or collaboration inquiries: **evitanegara@gmail.com**
+

@@ -30,7 +30,7 @@ This project investigates multiple supervised learning approaches for time-serie
 - Converted date strings (DDMMYY) into Python datetime objects.
 - Resampled daily data into biweekly averages to reduce short-term volatility and highlight long-term trends.
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/2b5a1cdc-0730-45d2-a0c0-7c74a8c4f89e" alt="weather prediction" width="700"/>
+  <img src="https://github.com/user-attachments/assets/2b5a1cdc-0730-45d2-a0c0-7c74a8c4f89e" alt="weather prediction" width="500"/>
 </p>
 
 

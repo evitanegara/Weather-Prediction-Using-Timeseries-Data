@@ -111,9 +111,9 @@ Trained and optimized the following models:
   <img src="https://github.com/user-attachments/assets/2cbf12d5-7a7a-481c-bf7a-e1e722e92ab5" alt="Forecasting weather" width="700"/>
 </p>
 
- <p align="center">
-  <img src="https://github.com/user-attachments/assets/e62f7f3c-763c-4ea2-b633-16e89e4e2a2c" alt="Forecasting" width="700"/>
-</p>
+   <p align="center">
+    <img src="https://github.com/user-attachments/assets/e62f7f3c-763c-4ea2-b633-16e89e4e2a2c" alt="Forecasting" width="700"/>
+   </p>
 
 ## Contact
 

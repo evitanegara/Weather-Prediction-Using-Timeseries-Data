@@ -106,6 +106,7 @@ Trained and optimized the following models:
 
 - All models effectively captured the seasonal trend of solar radiation.
 - For future prediction, all the models show an upward pattern, which makes sense because these models have effectively captured the seasonal and diurnal patterns present in the historical data. The upward trend observed in future predictions is likely a reflection of seasonal increases in solar radiation.
+  
   <p align="center">
   <img src="https://github.com/user-attachments/assets/2cbf12d5-7a7a-481c-bf7a-e1e722e92ab5" alt="Forecasting weather" width="500"/>
 </p>

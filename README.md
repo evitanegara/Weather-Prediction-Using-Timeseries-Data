@@ -38,7 +38,7 @@ This project investigates multiple supervised learning approaches for time-serie
 - Visualized distributions of key features (SRAD, RAIN, TMAX, TMIN) using histograms and boxplots.
 - Applied IQR-based capping to handle rainfall outliers and reduce skew.
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/525682c5-afd1-4b5f-89d9-a8e3f309531f" alt="Handling Outlier" width="700"/>
+  <img src="https://github.com/user-attachments/assets/525682c5-afd1-4b5f-89d9-a8e3f309531f" alt="Handling Outlier" width="500"/>
 </p>
 
 ### 4. Data Splitting and Scaling
@@ -107,11 +107,11 @@ Trained and optimized the following models:
 - All models effectively captured the seasonal trend of solar radiation.
 - For future prediction, all the models show an upward pattern, which makes sense because these models have effectively captured the seasonal and diurnal patterns present in the historical data. The upward trend observed in future predictions is likely a reflection of seasonal increases in solar radiation.
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/2cbf12d5-7a7a-481c-bf7a-e1e722e92ab5" alt="Forecasting weather" width="700"/>
+  <img src="https://github.com/user-attachments/assets/2cbf12d5-7a7a-481c-bf7a-e1e722e92ab5" alt="Forecasting weather" width="500"/>
 </p>
 
  <p align="center">
-  <img src="https://github.com/user-attachments/assets/e62f7f3c-763c-4ea2-b633-16e89e4e2a2c" alt="Forecasting" width="700"/>
+  <img src="https://github.com/user-attachments/assets/e62f7f3c-763c-4ea2-b633-16e89e4e2a2c" alt="Forecasting" width="500"/>
 </p>
 
 ## Contact

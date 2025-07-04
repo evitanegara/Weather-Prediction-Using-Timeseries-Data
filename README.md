@@ -1,10 +1,9 @@
 # Weather Forecasting for Agriculture Using Machine Learning and Deep Learning
 ## Project Overview
-This project focuses on the development and evaluation of machine learning and deep learning models for time-series forecasting of solar radiation (SRAD), a key climatic factor influencing crop productivity. Leveraging 40 years of historical meteorological data from Rothamsted, England (1959–1999), the project aims to build accurate and interpretable models that can support agricultural planning, including irrigation scheduling and planting decisions. This work is positioned as a climate-agriculture forecasting case study, addressing real world challenges in yield prediction, drought anticipation, and resource efficient farming.The project explores a comparative modeling approach using traditional machine learning algorithms (KNN, Random Forest, XGBoost, AdaBoost), deep learning techniques (MLP, LSTM), and hybrid ensemble methods (Voting, Stacking). Each model is rigorously optimized and evaluated using a consistent methodology, with results informing best practices for time-series forecasting in agricultural contexts.
+This project focuses on the development and evaluation of machine learning and deep learning models for time-series forecasting of solar radiation (SRAD), a key climatic factor influencing crop productivity. Leveraging 40 years of historical meteorological data from Rothamsted, England (1959–1999), the project aims to build accurate and interpretable models that can support agricultural planning, including irrigation scheduling and planting decisions. This work is positioned as a climate-agriculture forecasting case study, addressing real world challenges in yield prediction, drought anticipation, and resource efficient farming. The project explores a comparative modeling approach using traditional machine learning algorithms (KNN, Random Forest, XGBoost, AdaBoost), deep learning techniques (MLP, LSTM), and hybrid ensemble methods (Voting, Stacking). Each model is rigorously optimized and evaluated using a consistent methodology, with results informing best practices for time-series forecasting in agricultural contexts.
 
 
 ## Dataset Overview
-
 - Source: [e-RA Rothamsted Online Database (UK)](https://www.era.rothamsted.ac.uk/)
 - Period: 1959–1999  
 - Frequency: Daily observations (resampled to biweekly)  
@@ -21,7 +20,6 @@ This project focuses on the development and evaluation of machine learning and d
 This project investigates multiple supervised learning approaches for time-series regression forecasting. Ensemble tree models and neural networks demonstrate strong accuracy, with the Voting Regressor achieving the best overall performance. Random Forest stands out for its low MAPE (0.1234) and high R² (0.9736), making it highly suitable for capturing complex relationships in climate data. XGBoost delivers similar results with efficient learning from difficult cases. MLP offers solid performance in modeling non-linear dependencies, while LSTM shows the best R² (0.9741), capturing temporal sequences well. The ensemble-based Voting Regressor achieves the lowest MAPE (0.1134), indicating it generalizes best across the evaluation folds. Visualizations show consistent model performance in replicating SRAD seasonality and trend, with future forecasts successfully projecting rising solar radiation into 2000.
 
 ## Project Workflow
-
 ### 1. Data Import and Library Setup
 - Utilized libraries such as **Pandas**, **NumPy**, **Scikit-learn**, **Matplotlib**, **TensorFlow**, and **Keras** for data preprocessing, visualization, and model training.
 
@@ -81,7 +79,6 @@ Trained and optimized the following models:
 ---
 
 ## Highlights
-
 - Voting Regressor achieved the lowest MAPE (11.34%), offering the most accurate average forecasts.
 - LSTM scored the highest R² (97.41%) and lowest RMSE, excelling at learning temporal dependencies.
 - Random Forest and XGBoost offered strong balance between accuracy and interpretability.
@@ -89,12 +86,10 @@ Trained and optimized the following models:
 - KNN was the weakest performer due to its sensitivity to noise and distance metrics in high-dimensional data.
 
 ## Forecast Visualization
-
 - All models effectively captured the seasonal trend of solar radiation.
 - For future prediction, all the models show an upward pattern, which makes sense because these models have effectively captured the seasonal and diurnal patterns present in the historical data. The upward trend observed in future predictions is likely a reflection of seasonal increases in solar radiation.
 
 ## Key Takeaways
-
 - Ensemble Learning Works Best: Voting Regressor had the most balanced and reliable predictions.
 - Temporal Dynamics Matter: LSTM’s ability to model sequences made it ideal for time-series forecasting.
 - Tree-Based Models Excel: Random Forest and XGBoost offered both performance and transparency.
@@ -103,7 +98,6 @@ Trained and optimized the following models:
 ---
 
 ## Forecast Visualization
-
 - All models effectively captured the seasonal trend of solar radiation.
 - For future prediction, all the models show an upward pattern, which makes sense because these models have effectively captured the seasonal and diurnal patterns present in the historical data. The upward trend observed in future predictions is likely a reflection of seasonal increases in solar radiation.
   
